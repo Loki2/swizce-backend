@@ -16,3 +16,7 @@ GG_APP_SECRET=x71AB4I23gUOKR_4GsqkuFhr
 GG_CALLBACK_ROUTE=auth/google/callback
 
 FRONTEND_URI=http://localhost:3000
+
+
+mongodump --db=Shoppy --archive=./Shoppy.gzip --gzip
+mongorestore --db=Shoppy --archive=./Shoppy.gzip --gzip

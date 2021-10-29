@@ -20,7 +20,7 @@ export default async () => {
     //Add More Resolver here
     resolvers: [
       AuthResolvers, 
-      ProdResolvers,
+      ProdResolvers, 
       ScreamResolvers,
       SongResolvers,
       TypeserviceResolvers,

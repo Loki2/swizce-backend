@@ -11,14 +11,6 @@ export class Scream {
   @Field(() => ID)
   id!: string
 
-  @Field(_type => [String])
-  @prop({type: () => [String]})
-  videoUrl?: [string];
-
-  @Field(_type => [String])
-  @prop({type: () => [String]})
-  imageUrl?: [string];
-
   @Field()
   @prop({required: true, maxlength: 515})
   description?: string;
@@ -39,6 +31,14 @@ export class Scream {
   @Field(() => [String])
   @prop({ type: String, enum: ScreamStatus, default: [ScreamStatus.public] })
   status!: ScreamStatus[]
+
+  // @Field(_type => [String])
+  // @prop({type: () => [String]})
+  // videoUrl?: [string];
+
+  @Field(_type => [String])
+  @prop({type: () => [String]})
+  imageUrl?: [string];
 
   @Field()
   @prop({ default: () => Date.now()})

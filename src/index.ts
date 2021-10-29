@@ -23,35 +23,20 @@ const {
 PassportFB();
 PassportGG();
 
-//options for cors midddleware
-// const options: cors.CorsOptions = {
-//   allowedHeaders: [
-//     'Origin',
-//     'X-Requested-With',
-//     'Content-Type',
-//     'Accept',
-//     'X-Access-Token',
-//   ],
-//   credentials: true,
-//   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-//   origin: FRONTEND_URI!,
-//   preflightContinue: false,
-// };
 
 const startServer = async () => {
   try {
     // Create Connection to Database
-    await mongoose.connect(`${DB_URI}`, {
-      useCreateIndex: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
+    await mongoose.connect(`${DB_URI}`, { 
+      useNewUrlParser: true,  
+      useUnifiedTopology: true 
     });
 
     // Create Server app
     const app = express();
     //App Middleware
     app.use(cookieParser());
+    // app.use(cors());
     //Rest Api Route
     //Facebook Login Authentication
     app.get("/auth/facebook", passport.authenticate("facebook"));
@@ -88,7 +73,7 @@ const startServer = async () => {
       app,
       cors: { 
         credentials: true,
-        origin: FRONTEND_URI!, // || "http://localhost:3000",
+        origin: FRONTEND_URI!,
       },
     });
     app.listen({ port: APP_PORT }, () => {

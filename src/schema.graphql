@@ -44,7 +44,7 @@ type Mutation {
   createProduct(color: String!, description: String!, imageUrl: String!, name: String!, price: Float!, quantity: Float!, size: Float!): Product!
   createProfile(age: Float!, bios: String!, birthdate: DateTime!, coverUrl: String!, firstname: String!, gender: String!, lastname: String!, mentalStatus: String!, profileUrl: String!): Profile!
   createRecomment(commentId: String!, description: String!, screamId: String!): Recomment!
-  createScream(description: String!, imageUrl: String!, likes: Float!, shares: Float!, videoUrl: String!): Scream!
+  createScream(description: String!, imageUrl: String!): Scream!
   createService(address: String!, contact: String!, imageUrl: String!, logoUrl: String!, name: String!, price: Float!, tags: String!): Service!
   createSong(alblum: String!, artist: String!, fileUrl: String!, genre: String!, imageUrl: String!, name: String!): Song!
   createTypeservice(desc: String!): Typeservice!
@@ -126,7 +126,6 @@ type Scream {
   shares: Float!
   status: [String!]!
   user: User!
-  videoUrl: [String!]!
 }
 
 """Scream Model"""

@@ -20,3 +20,9 @@ FRONTEND_URI=http://localhost:3000
 
 mongodump --db=Shoppy --archive=./Shoppy.gzip --gzip
 mongorestore --db=Shoppy --archive=./Shoppy.gzip --gzip
+
+
+//Dev Script
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "rimraf dist && tsc",
+    "start": "npm run build && node dist/index.js"

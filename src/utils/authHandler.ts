@@ -4,7 +4,7 @@ import { AppRequest } from "../types";
 
 
 export const isAuthenticated = async (req: AppRequest) => {
-   //Check if req has not UsrId
+   //Check if req has no UserId
    if (!req.userId) throw new Error("Please Login to proceed...!");
   
   //Query User from database

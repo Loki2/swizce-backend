@@ -52,7 +52,7 @@ export const PassportFB = () =>
     })
   );
 
-  export const PassportGG = () =>
+export const PassportGG = () =>
   passport.use(
     new GGStrategy( GGConfig, (req, _, __, profile, done) => {
       try {
@@ -63,7 +63,7 @@ export const PassportFB = () =>
           done(undefined, profile)
         }
       } catch (error) {
-        done(error)
+        done(error as string)
       }
     })
   );

@@ -41,11 +41,8 @@ export class ScreamResolvers {
   @Mutation(() => Scream)
   async createScream(
     @Ctx() { req }: AppContext,
-    @Arg("videoUrl") videoUrl: string,
     @Arg("imageUrl") imageUrl: string,
-    @Arg("description") description: string, //MaxLength : 120 characters
-    @Arg("likes") likes: number,
-    @Arg("shares") shares: number,
+    @Arg("description") description: string, //MaxLength : 515 characters
     // @Arg("songId") songId: string
   ): Promise<Scream | null> {
     try {
@@ -54,11 +51,8 @@ export class ScreamResolvers {
       if (!userId) throw new Error("Please Login to Process...!");
 
       const scream = await ScreamModel.create({
-        videoUrl,
         imageUrl,
         description,
-        likes,
-        shares,
         // song: songId,
         user: userId,
       });

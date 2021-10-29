@@ -46,7 +46,7 @@ export class User {
   roles!: RoleOptions[]
 
   @Field()
-  @prop({ default: () => Date.now() + 60 * 60 * 1000 * 7})
+  @prop({ default: () => Date.now() + 60 * 60 * 1000 * 7 })
   createdAt!: Date
 
   @Field(_type => Profile) //Prop To front end query

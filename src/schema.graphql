@@ -59,6 +59,17 @@ type Mutation {
   updateRoles(newRoles: [String!]!, userId: String!): User
 }
 
+"""NFT Product Model"""
+type Nftproduct {
+  enc_info: [String!]!
+  id: ID!
+  pri_key: String!
+  price: Float!
+  pub_key: String!
+  status: Boolean!
+  user: User!
+}
+
 """Product Model"""
 type Product {
   color: String!
@@ -169,6 +180,7 @@ type User {
   createdAt: DateTime!
   email: String!
   id: ID!
+  nftproducts: [Nftproduct!]!
   products: [Product!]!
   profile: Profile!
   roles: [String!]!

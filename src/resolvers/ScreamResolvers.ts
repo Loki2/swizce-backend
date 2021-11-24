@@ -32,7 +32,7 @@ export class ScreamResolvers {
             model: UserModel
           },
         ]})
-        .sort({ createAt: "desc" });
+        .sort({ createAt: -1 });
     } catch (error) {
       throw error;
     }

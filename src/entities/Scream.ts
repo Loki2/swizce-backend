@@ -4,6 +4,7 @@ import { ScreamStatus } from '../types';
 import { __Type } from 'graphql';
 import { User } from './User';
 import { Comment } from './Comment';
+// import { Screamnft } from './ScreamNFT';
 
 
 @ObjectType({ description: 'Scream Model'}) //Export Objects To type graphql
@@ -44,6 +45,9 @@ export class Scream {
   @prop({ default: () => Date.now()})
   createdAt!: Date;
 
+  // @Field(_type => Screamnft)
+  // @prop({ ref: typeof Screamnft, required: true})
+  // nft: Ref<Screamnft>
 
   @Field(_type => User)
   @prop({ ref: typeof User, required: true})

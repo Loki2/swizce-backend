@@ -7,6 +7,7 @@ import { Profile } from './Profile';
 import { Service } from './Service';
 import { Song } from './Songs';
 import { Typeservice } from './Typeservice';
+import { Nftproduct } from './NftProduct';
 
 @ObjectType({ description: 'User Model'}) //Export Objects To type graphql
 export class User {
@@ -71,6 +72,9 @@ export class User {
   @prop({ required: true, ref: typeof [Product]}) //
   products?: Ref<Product>[];
 
+  @Field(_type => [Nftproduct]) //Prop To front end query
+  @prop({ required: true, ref: typeof [Nftproduct]}) //
+  nftproducts?: Ref<Nftproduct>[];
 
   @Field(_type => [Scream]) //Scream To front end query
   @prop({ required: true, ref: typeof[Scream]}) //

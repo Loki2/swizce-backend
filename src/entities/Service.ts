@@ -16,6 +16,9 @@ export class Service {
   @prop({required: true, maxlength: 120})
   name?: string
 
+  @Field()
+  @prop({required: true})
+  description?: string
 
   @Field()
   @prop({required: true})
@@ -26,9 +29,9 @@ export class Service {
   @prop({required: true})
   address?: string
 
-  @Field()
-  @prop({required: true})
-  price?: number
+  // @Field()
+  // @prop({required: true})
+  // price!: number
 
   @Field()
   @prop({required: true})

@@ -12,6 +12,7 @@ import { ScreamResolvers } from "./resolvers/ScreamResolvers";
 import { ServiceResolvers } from "./resolvers/ServiceResolvers";
 import { SongResolvers } from "./resolvers/SongResolvers";
 import { TypeserviceResolvers } from "./resolvers/TypeServiceResolvers";
+import { UserResolvers } from "./resolvers/Users";
 import { AppContext } from "./types";
 import { createToken, sendToken, verifyToken } from "./utils/tokenHandler";
 
@@ -27,7 +28,8 @@ export default async () => {
       ServiceResolvers,
       ProfileResolver,
       CommentResolvers,
-      RecommentResolvers
+      RecommentResolvers,
+      UserResolvers
     ],
     emitSchemaFile: { path: "./src/schema.graphql" },
     validate: false,

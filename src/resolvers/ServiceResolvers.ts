@@ -18,7 +18,7 @@ export class ServiceResolvers {
 
       if (!userId) throw new Error("Please Login to Process...!");
 
-      return ServiceModel.find().populate({ path: 'user', model: UserModel })
+      return ServiceModel.find({}).sort({ createdAt: -1}).populate({ path: 'user', model: UserModel })
     } catch (error) {
       throw error;
     }
@@ -29,9 +29,10 @@ export class ServiceResolvers {
   async createService(
     @Ctx() { req }: AppContext,
     @Arg("name") name: string,
+    @Arg("description") description: string,
     @Arg("contact") contact: string,
     @Arg("address") address: string,
-    @Arg("price") price: number,
+    // @Arg("price") price: number,
     @Arg("logoUrl") logoUrl: string,
     @Arg("imageUrl") imageUrl: string,
     // @Arg("typeserviceId") typeserviceId: string,
@@ -44,9 +45,10 @@ export class ServiceResolvers {
 
       const service = await ServiceModel.create({
         name,
+        description,
         contact,
         address,
-        price,
+        // price,
         logoUrl,
         imageUrl,
         tags,

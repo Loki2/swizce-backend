@@ -54,6 +54,14 @@ export class User {
   @prop({ ref: typeof Profile }) //
   profile?: Ref<Profile>;
 
+  @Field(_type => String)
+  @prop({ default: ""})
+  images?: string;
+
+  @Field(_type => String)
+  @prop({ default: ""})
+  covers?: string;
+
 
   @Field(_type => [Typeservice]) //Prop To front end query
   @prop({ required: true, ref: typeof [Typeservice]}) //
